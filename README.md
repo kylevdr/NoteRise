@@ -1,0 +1,2 @@
+# NoteRise
+Note-taking app.
