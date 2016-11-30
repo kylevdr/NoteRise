@@ -1,0 +1,67 @@
+<!-- View ideas - about page -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="noteRiseApp">
+    <head>
+        <!-- REQUIRED BY BOOTSTRAP -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- /REQUIRED BY BOOTSTRAP -->
+        <title>NoteRise</title>
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <link rel="stylesheet" href="main.css" type="text/css">
+    </head>
+    <body ng-controller="mainCtrl">
+        <div class="container-fluid">
+            <header>
+                <h1 class="text-center">NoteRise</h1>
+            </header>
+            <div class="row">
+                <div class="col-sm-4 split-left">
+                    <div class="note-list">
+                        <div class="note-list-heading">
+                            Notes
+                        </div>
+                        <div class="note-listing" ng-repeat="note in notes" ng-click="setNote(note)">
+                            <p><b>{{note.title}}</b></p>
+                            <p>Preview: {{note.text | limitTo : 20}}<span ng-if="note.text.length > 20">...</span></p>
+                            <p><i>Updated: {{note.time | date : "medium"}}</i></p>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" ng-click="createNote()">New Note</button>
+                    <button class="btn btn-default" disabled>Save Notes</button>
+
+                </div>
+                <div class="col-sm-8 split-right">
+                    <input type="text" ng-model="currentNote.title" placeholder="Title"><br>
+                    <textarea ng-model="currentNote.text" placeholder="Take a note"></textarea><br>
+                    <button class="btn btn-default" ng-click="saveNewNote()">Save As New Note</button>
+                    <button class="btn btn-default" disabled>Full Screen</button> <!-- Use <a> with role button? -->
+                    <random-quote></random-quote>
+
+                </div>
+            </div>
+            <footer>
+                <div class="quote-div">
+                <p class="text-center">"Alaksdjf laksdjf asldkfja" - Ljkld Flksd</p>
+                </div>
+                <p>&copy; Kyle VanDeRiet 2016 -- Designed and coded by Kyle VanDeRiet</p> <!-- Add social links eg github -->
+            </footer>
+        </div>
+
+        <!-- //////////////////SCRIPTS\\\\\\\\\\\\\\\\\\\\ -->
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/656dbdb103.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- ANGULAR -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/mainCtrl.js"></script>
+        <script src="./js/mainService.js"></script>
+        <!-- /ANGULAR -->
+        <script src="./js/animate.js"></script>
+    </body>
+</html>

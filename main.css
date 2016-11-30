@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background: salmon;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+footer {
+    background: #333;
+    color: white;
+    height: 7vh;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.split-left {
+    background: teal;
+    height: 83vh;
+}
+
+.note-list {
+    background: white;
+}
+
+.note-list-heading {
+    background: lightgray;
+    border: 1px solid black;
+}
+
+.note-listing {
+    border: 1px solid black;
+}
+
+.note-listing:hover {
+    cursor: pointer;
+}
+
+.split-right {
+    background: lightgray;
+    height: 83vh;
+}
+
+.quote-div {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
