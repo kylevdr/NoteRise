@@ -3,7 +3,9 @@
 }
 
 header {
-    background: salmon;
+    background: #333333;
+    color: #F1044C;
+    color: #FF135A;
     height: 10vh;
     display: flex;
     align-items: center;
@@ -11,36 +13,55 @@ header {
 }
 
 header h1 {
-    margin: 0;
     font-family: 'Shadows Into Light', cursive;
+    font-size: 50px;
 }
 
 footer {
-    background: #333;
+    background: #333333;
     color: white;
     height: 7vh;
 }
 
-.container-fluid {
-    padding: 0;
+p {
+    margin: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
 }
 
 .split-left {
+    padding: 15px;
     background: teal;
+    background: #107B69;
     height: 83vh;
 }
 
 .note-list {
     background: white;
+    height: 70vh;
+    border-radius: 3px;
+    overflow: auto;
+    /*border: 1px solid #333333;*/
+    margin-bottom: 15px;
 }
 
 .note-list-heading {
-    background: lightgray;
-    border: 1px solid black;
+    background: #F1044C;
+    background: #FF135A;
+    color: white;
+    border-bottom: 1px solid #777;
+    border-radius: 3px 3px 0px 0px;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
 }
 
 .note-listing {
-    border: 1px solid black;
+    border-bottom: 1px solid #777;
+    padding: 5px;
 }
 
 .note-listing:hover {
@@ -48,13 +69,25 @@ footer {
 }
 
 .split-right {
-    background: lightgray;
+    padding: 15px;
+    background: #EFEBDE;
     height: 83vh;
+    display: flex;
+    justify-content: center;
+}
+
+.editor {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.text-input {
+    height: 50vh !important;
 }
 
 .quote-div {
     height: 50%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }

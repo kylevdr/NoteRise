@@ -16,40 +16,52 @@
     </head>
     <body ng-controller="mainCtrl">
         <div class="container-fluid">
+            <div class="row">
             <header>
                 <h1 class="text-center">NoteRise</h1>
             </header>
+            </div>
             <div class="row">
                 <div class="col-sm-4 split-left">
                     <div class="note-list">
                         <div class="note-list-heading">
                             Notes
                         </div>
-                        <div class="note-listing" ng-repeat="note in notes" ng-click="setNote(note)">
+                        <div class="note-listing" ng-repeat="note in notes | orderBy : 'time' : true | filter : {archived : '!'+true} track by $index" ng-click="setNote(note)">
                             <p><b>{{note.title}}</b></p>
-                            <p>Preview: {{note.text | limitTo : 20}}<span ng-if="note.text.length > 20">...</span></p>
+                            <p>Preview: {{note.text | limitTo : 22}}<span ng-if="note.text.length > 22">...</span></p>
                             <p><i>Updated: {{note.time | date : "medium"}}</i></p>
                         </div>
                     </div>
-                    <button class="btn btn-default" ng-click="createNote()">New Note</button>
-                    <button class="btn btn-default" disabled>Save Notes</button>
+                    <div class="center">
+                        <button class="btn btn-default" ng-click="createNote()">New Note</button>
+                    </div>
 
                 </div>
                 <div class="col-sm-8 split-right">
-                    <input type="text" ng-model="currentNote.title" placeholder="Title"><br>
-                    <textarea ng-model="currentNote.text" placeholder="Take a note"></textarea><br>
-                    <button class="btn btn-default" ng-click="saveNewNote()">Save As New Note</button>
-                    <button class="btn btn-default" disabled>Full Screen</button> <!-- Use <a> with role button? -->
-                    <random-quote></random-quote>
+                    <div class="editor" ng-show="currentNote">
+                        <input type="text"  class="form-control" style="font-weight: bold" ng-model="editorNote.title" placeholder="Title"><br>
+                        <textarea ng-model="editorNote.text" class="form-control text-input" placeholder="Write a note"></textarea><br>
+                        <button class="btn btn-default" ng-click="saveNote()">Save</button>
+                        <button class="btn btn-default" ng-click="saveNewNote()">Save As New</button>
+                        <div style="float: right">
+                            <button class="btn btn-danger" ng-click="archiveNote(currentNote); clearCurrentNote()">Delete</button>
+                            <button class="btn btn-default" disabled>Expand Editor</button> <!-- Use <a> with role button? -->
+                            <button class="btn btn-default" ng-click="clearCurrentNote()">Close Editor</button>
+                        </div>
+                        <random-quote></random-quote>
+                    </div>
 
                 </div>
             </div>
+            <div class="row">
             <footer>
                 <div class="quote-div">
                 <p class="text-center">"Alaksdjf laksdjf asldkfja" - Ljkld Flksd</p>
                 </div>
-                <p>&copy; Kyle VanDeRiet 2016 -- Designed and coded by Kyle VanDeRiet</p> <!-- Add social links eg github -->
+                <p class="text-center">&copy; Kyle VanDeRiet 2016 -- Designed and coded by Kyle VanDeRiet</p> <!-- Add social links eg github -->
             </footer>
+            </div>
         </div>
 
         <!-- //////////////////SCRIPTS\\\\\\\\\\\\\\\\\\\\ -->
