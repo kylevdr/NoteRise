@@ -1,0 +1,8 @@
+$salmon: #FF135A;
+$teal: #107B69;
+$gray: #333333;
+$tangerine: #ffc528;
+//doesn't work -- produces white: $light-gray: lighten($gray, 5%);
+
+$primary-color: $tangerine;
+$accent-color: $salmon;

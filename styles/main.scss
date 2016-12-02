@@ -1,30 +1,34 @@
+@import "variables";
+@import "mixins";
+
 * {
     box-sizing: border-box;
 }
 
+p {
+    margin: 0;
+}
+
 header {
-    background: #333333;
+    background: $gray;
     color: #F1044C;
-    color: #FF135A;
+    color: $accent-color;
+    color: $primary-color;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
-header h1 {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 50px;
+    h1 {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 50px;
+    }
 }
 
 footer {
-    background: #333333;
+    background: $gray;
     color: white;
     height: 7vh;
-}
-
-p {
-    margin: 0;
 }
 
 .center {
@@ -34,15 +38,15 @@ p {
 
 .split-left {
     padding: 15px;
-    background: teal;
-    background: #107B69;
+    background: $primary-color;
     height: 83vh;
 }
 
 .note-list {
+    background: rgba(255, 255, 255, .7);
     background: white;
     height: 70vh;
-    border-radius: 3px;
+    border-radius: 5px;
     overflow: auto;
     /*border: 1px solid #333333;*/
     margin-bottom: 15px;
@@ -50,22 +54,27 @@ p {
 
 .note-list-heading {
     background: #F1044C;
-    background: #FF135A;
+    background: $accent-color;
+    background: $gray;
     color: white;
     border-bottom: 1px solid #777;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     display: flex;
     justify-content: center;
     padding: 3px;
 }
 
 .note-listing {
-    border-bottom: 1px solid #777;
+    /*border-bottom: 1px solid #777;*/
     padding: 5px;
-}
+    background: white;
+    margin: 12px;
+    border-radius: 7px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
 
-.note-listing:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .split-right {

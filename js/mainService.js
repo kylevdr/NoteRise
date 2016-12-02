@@ -9,12 +9,21 @@ angular.module('noteRiseApp').service('mainService', function($q) {
         }
     ];
 
+    var sampleQuote = {
+      text: "Sample Quote Text",
+      author: "Sample Author"
+    };
+
     this.getNotes = function() {
         return localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : sampleNotes;
     };
 
     this.setNotes = function(noteList) {
         localStorage.setItem('notes', JSON.stringify(noteList));
+    };
+
+    this.getQuote = function() {
+      return sampleQuote;
     };
 
 });

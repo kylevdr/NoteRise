@@ -1,0 +1,31 @@
+{
+  "name": "note-rise",
+  "version": "1.0.0",
+  "description": "Note-taking app.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylevdr/NoteRise.git"
+  },
+  "author": "Kyle VanDeRiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylevdr/NoteRise/issues"
+  },
+  "homepage": "https://github.com/kylevdr/NoteRise#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cachebust": "0.0.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-print": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}

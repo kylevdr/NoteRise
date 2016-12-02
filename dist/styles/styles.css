@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box; }
+
+p {
+  margin: 0; }
+
+header {
+  background: #333333;
+  color: #F1044C;
+  color: #FF135A;
+  color: #ffc528;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  header h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 50px; }
+
+footer {
+  background: #333333;
+  color: white;
+  height: 7vh; }
+
+.center {
+  display: flex;
+  justify-content: center; }
+
+.split-left {
+  padding: 15px;
+  background: #ffc528;
+  height: 83vh; }
+
+.note-list {
+  background: rgba(255, 255, 255, 0.7);
+  background: white;
+  height: 70vh;
+  border-radius: 5px;
+  overflow: auto;
+  /*border: 1px solid #333333;*/
+  margin-bottom: 15px; }
+
+.note-list-heading {
+  background: #F1044C;
+  background: #FF135A;
+  background: #333333;
+  color: white;
+  border-bottom: 1px solid #777;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  justify-content: center;
+  padding: 3px; }
+
+.note-listing {
+  /*border-bottom: 1px solid #777;*/
+  padding: 5px;
+  background: white;
+  margin: 12px;
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); }
+  .note-listing:hover {
+    cursor: pointer; }
+
+.split-right {
+  padding: 15px;
+  background: #EFEBDE;
+  height: 83vh;
+  display: flex;
+  justify-content: center; }
+
+.editor {
+  margin-top: 20px;
+  width: 90%; }
+
+.text-input {
+  height: 50vh !important; }
+
+.quote-div {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/*# sourceMappingURL=styles.css.map */

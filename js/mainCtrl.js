@@ -1,11 +1,17 @@
 angular.module('noteRiseApp').controller('mainCtrl', function($scope, mainService) {
 
-    $scope.getNotes = mainService.getNotes;
+    $scope.getNotes = function() {
+      $scope.notes = mainService.getNotes();
+    }();
 
-    $scope.notes = $scope.getNotes();
     // $scope.getNotes().then(function(results) {
     //     $scope.notes = results;
     // })
+
+    $scope.getQuote = function() {
+      $scope.quote = mainService.getQuote();
+      $scope.quoteString = `"${$scope.quote.text}" -- ${$scope.quote.author}`;
+    }();
 
     $scope.saveNotes = function() {
         mainService.setNotes($scope.notes);
@@ -26,7 +32,7 @@ angular.module('noteRiseApp').controller('mainCtrl', function($scope, mainServic
             time: new Date(),
             id: $scope.notes.length
         };
-        $scope.notes.push(newNote);
+        $scope.notes.unshift(newNote);
         $scope.currentNote = newNote;
         $scope.editorNote = {
             title: $scope.currentNote.title,
@@ -49,7 +55,7 @@ angular.module('noteRiseApp').controller('mainCtrl', function($scope, mainServic
             time: new Date(),
             id: $scope.notes.length
         };
-        $scope.notes.push(newNote);
+        $scope.notes.unshift(newNote);
         $scope.currentNote = newNote;
         $scope.saveNotes();
     };
