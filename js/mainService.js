@@ -1,4 +1,4 @@
-angular.module('noteRiseApp').service('mainService', function($q) {
+angular.module('noteRiseApp').service('mainService', function($http) {
 
     var sampleNotes = [
         {
@@ -22,8 +22,56 @@ angular.module('noteRiseApp').service('mainService', function($q) {
         localStorage.setItem('notes', JSON.stringify(noteList));
     };
 
+    // this.getQuote = function() {
+    //   return sampleQuote;
+    // };
+
     this.getQuote = function() {
-      return sampleQuote;
+
+      //forismatic
+
+      // doesn't work:
+
+      // return $http({
+      //   // method: 'POST',
+      //   method: 'getQuote',
+      //   url: 'http://api.forismatic.com/api/1.0/',
+      //   format: 'json',
+      //   lang: 'en'
+      // });
+
+      // doesn't work:
+
+      // return $http({
+      //   method: 'GET',
+      //   url: 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp='
+      // });
+
+      // quotesondesign
+
+      // return $http({
+      //   method: 'GET',
+      //   url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'
+      // }).then(function(result) {
+      //   var text = result.data[0].content;
+      //   var text = text.slice(3, -6);
+      //   var author = result.data[0].title;
+      //
+      //   return [text, author];
+      // });
+
+      //theysaidso
+      //TODO: include attribution on about posts_per_page
+      //Limit 10 API calls/hour
+      //Requires paid subscription for more API calls or for random quote
+
+      return $http({
+        method: 'GET',
+        url: 'http://quotes.rest/qod.json?category=inspire'
+      }).then(function(result) {
+        return result.data.contents.quotes[0];
+      });
+
     };
 
 });

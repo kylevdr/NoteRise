@@ -1,0 +1,14 @@
+<div class="note-list-heading">
+    Notes
+</div>
+<div class="note-list sortable">
+    <div class="note-listing" ng-repeat="note in notes | filter : {archived : '!'+true} track by $index" ng-click="setNote(note)">
+        <button class="btn btn-danger" ng-click="archiveNote(note)"><i class="fa fa-close"></i></button>
+        <p><b>{{note.title}}</b></p>
+        <p>Preview: {{note.text | limitTo : 22}}<span ng-if="note.text.length > 22">...</span></p>
+        <p><i>Updated: {{note.time | date : "medium"}}</i></p>
+    </div>
+</div>
+<div class="center">
+    <button class="btn btn-default" ng-click="createNote()">New Note</button>
+</div>

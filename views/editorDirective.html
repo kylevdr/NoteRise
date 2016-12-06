@@ -1,0 +1,11 @@
+<div class="editor">
+    <input type="text"  class="form-control" style="font-weight: bold" ng-model="editorNote.title" placeholder="Title"><br>
+    <textarea ng-model="editorNote.text" class="form-control text-input" placeholder="Write a note"></textarea><br>
+    <button class="btn btn-primary" ng-click="saveNote()"><i class="fa fa-save"></i>&nbsp; Save</button>
+    <button class="btn btn-default" ng-click="saveNewNote()"><i class="fa fa-file"></i>&nbsp; Save As New</button>
+    <div style="float: right">
+        <button class="btn btn-danger" ng-click="archiveNote(currentNote)"><i class="fa fa-trash"></i>&nbsp; Delete</button>
+        <button class="btn btn-default" ng-click="toggleFullScreen()"><span ng-hide="fullscreen"><i class="fa fa-expand"></i>&nbsp; Expand</span><span ng-show="fullscreen"><i class="fa fa-compress"></i> Compress</span></button>
+        <button class="btn btn-default" ng-click="clearCurrentNote()"><i class="fa fa-close"></i>&nbsp; Close</button>
+    </div>
+</div>

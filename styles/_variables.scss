@@ -1,8 +1,24 @@
+////////////// COLORS \\\\\\\\\\\\\\\\
+
 $salmon: #FF135A;
+$pink: #e91e63;
 $teal: #107B69;
 $gray: #333333;
 $tangerine: #ffc528;
-//doesn't work -- produces white: $light-gray: lighten($gray, 5%);
+$forest: #87CC29;
+$green: #9ada28;
+$aqua: #388697;
+$blue: #31708f;
+$red: #ab444c;
+$red-pink: rgb(189, 10, 64);
+$red-pink2: #c3264e;
+$maroon: #861b3c;
+$paper: #EFEBDE;
+$paper: #f6f6ec;
 
-$primary-color: $tangerine;
-$accent-color: $salmon;
+
+//////////////// THEME \\\\\\\\\\\\\\\\\\
+
+$primary-color: $red-pink2;
+$primary-color-light: lighten($primary-color, 10%);
+$accent-color: $pink;

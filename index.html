@@ -16,47 +16,19 @@
         <div class="container-fluid">
             <div class="row">
             <header>
-                <h1 class="text-center">NoteRise</h1>
+                <h1><a ui-sref="home">NoteRise</a></h1>
+                <ul>
+                  <li><a ui-sref="home">Notes</a></li>
+                  <li><a ui-sref="about">About</a></li>
+                </ul>
             </header>
             </div>
-            <div class="row">
-                <div class="col-sm-4 split-left">
-                    <div class="note-list sortable">
-                        <div class="note-list-heading">
-                            Notes
-                        </div>
-                        <div class="note-listing" ng-repeat="note in notes | filter : {archived : '!'+true} track by $index" ng-click="setNote(note)"> <!-- | orderBy : 'time' : true -->
-                            <p><b>{{note.title}}</b></p>
-                            <p>Preview: {{note.text | limitTo : 22}}<span ng-if="note.text.length > 22">...</span></p>
-                            <p><i>Updated: {{note.time | date : "medium"}}</i></p>
-                        </div>
-                    </div>
-                    <div class="center">
-                        <button class="btn btn-default" ng-click="createNote()">New Note</button>
-                    </div>
 
-                </div>
-                <div class="col-sm-8 split-right">
-                    <div class="editor" ng-show="currentNote">
-                        <input type="text"  class="form-control" style="font-weight: bold" ng-model="editorNote.title" placeholder="Title"><br>
-                        <textarea ng-model="editorNote.text" class="form-control text-input" placeholder="Write a note"></textarea><br>
-                        <button class="btn btn-default" ng-click="saveNote()">Save</button>
-                        <button class="btn btn-default" ng-click="saveNewNote()">Save As New</button>
-                        <div style="float: right">
-                            <button class="btn btn-danger" ng-click="archiveNote(currentNote); clearCurrentNote()">Delete</button>
-                            <button class="btn btn-default" disabled>Expand Editor</button> <!-- Use <a> with role button? -->
-                            <button class="btn btn-default" ng-click="clearCurrentNote()">Close Editor</button>
-                        </div>
-                    </div>
+            <ui-view></ui-view>
 
-                </div>
-            </div>
             <div class="row">
             <footer>
-                <div class="quote-div">
-                <p class="text-center">{{quoteString}}</p>
-                </div>
-                <p class="text-center">&copy; Kyle VanDeRiet 2016 -- Designed and coded by Kyle VanDeRiet</p> <!-- Add social links eg github -->
+                <p class="text-center">&copy; Kyle VanDeRiet 2016 &nbsp;|&nbsp; Designed and coded by Kyle VanDeRiet</p> <!-- Add social links eg github -->
             </footer>
             </div>
         </div>
@@ -67,6 +39,7 @@
         <script src="https://use.fontawesome.com/656dbdb103.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
         <script src="./dist/js/bundle.js"></script>
     </body>
 </html>

@@ -24,6 +24,8 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./dist/styles'));
 });
 
+// Why isn't there a cachebust in build-js?
+
 gulp.task('build-js', function() {
    return gulp.src('./js/**/*')
       .pipe(sourcemaps.init())
@@ -42,5 +44,5 @@ gulp.task('build', ['clean', 'build-css', 'build-js'], function() {
 });
 
 gulp.task('watch', function() {
-    return gulp.watch(['./index.html', './styles/**/*', './js/**/*'], ['build']);
+    return gulp.watch(['./index.html', './styles/**/*', './js/**/*', './views/**/*'], ['build']);
 });

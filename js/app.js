@@ -1,1 +1,1 @@
-angular.module('noteRiseApp', []);
+angular.module('noteRiseApp', ['ui.router']);

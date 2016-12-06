@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-4 split-left" ng-hide="fullscreen">
+
+        <note-list></note-list>
+
+    </div>
+    <div class="split-right">
+
+        <editor style="width: 90%" ng-show="currentNote"></editor>
+
+        <div class="behind-editor" ng-hide="currentNote">
+          <div>
+            <h1 class="text-center" style="margin-bottom: 10px">NoteRise</h1>
+            <p class="text-center">Select a note or create a new note to get started.</p>
+            <br>
+            <br>
+            <div class="center">
+              <div class="well" ng-show="quote">
+                <p class="text-center" ng-show="quote" style="margin-bottom: 10px; font-size: 1.2em"><i class="fa fa-quote-left"></i> {{quote.text}} <i class="fa fa-quote-right"></i> -- {{quote.author}}</p>
+                <p class="text-center" ng-show="quote">Quote of the day provided by <a href="https://theysaidso.com/">They Said So</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</div>
