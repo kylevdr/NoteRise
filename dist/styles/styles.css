@@ -24,7 +24,8 @@ header {
         color: #fefefd;
         text-decoration: none; }
   header ul {
-    font-size: 20px;
+    font-size: 1.4em;
+    font-weight: 300;
     margin: 0 15px 0 0;
     padding: 0; }
     header ul li {
@@ -38,7 +39,7 @@ header {
           color: #ff0057;
           text-decoration: none; }
         header ul li a:focus {
-          color: #ccb9c0;
+          color: #ccc;
           text-decoration: none; }
 
 footer {
@@ -69,7 +70,7 @@ footer {
   justify-content: center;
   padding: 3px;
   margin: 15px 10px 0 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.57); }
 
 .note-list {
   max-height: 70vh;
