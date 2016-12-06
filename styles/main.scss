@@ -14,24 +14,26 @@ p {
 }
 
 header {
-    background: $gray;
-    color: $primary-color;
+    background: $header-footer-color;
+    color: $accent-color;
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
     h1 {
-      font-family: 'Shadows Into Light', cursive;
-      font-size: 50px;
+      font-family: 'Shadows Into Light', sans-serif;
+      font-size: 3em;
       margin: auto;
 
       a {
         color: white;
+        color: $paper-light;
         transition: .2s;
 
         &:hover, &:focus {
-          color: $accent-color;
+          color: white;
+          color: $paper-light;
           text-decoration: none;
         }
       }
@@ -48,10 +50,16 @@ header {
 
         a {
           color: white;
+          color: $paper-light;
           transition: .2s;
 
-          &:hover, &:focus {
+          &:hover, {
             color: $accent-color;
+            text-decoration: none;
+          }
+
+          &:focus {
+            color: rgb(204, 185, 192);
             text-decoration: none;
           }
         }
@@ -60,8 +68,9 @@ header {
 }
 
 footer {
-    background: $gray;
+    background: $header-footer-color;
     color: white;
+    color: $paper-light;
     height: 6vh;
     display: flex;
     justify-content: center;
@@ -76,20 +85,21 @@ footer {
 .split-left {
     padding: 15px;
     background: $primary-color;
+    background: $split-left-color;
     height: 86vh;
 }
 
 .note-list-heading {
     box-sizing: border-box;
-    color: white;
-    background: #444;
-    border: 1px solid #333;
+    color: $paper-light;
+    background: $pink;
+    // border: 1px solid #333;
     border-radius: 7px;
     display: flex;
     justify-content: center;
     padding: 3px;
     margin: 15px 10px 0 10px;
-    // box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
   }
 
 .note-list {
@@ -104,6 +114,7 @@ footer {
     box-sizing: border-box;
     padding: 5px;
     background: white;
+    background: $paper-light;
     margin: 12px;
     border-radius: 7px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .7);
@@ -121,8 +132,9 @@ footer {
     &:hover {
       cursor: pointer;
       background: #444;
-      color: white;
-      box-shadow: 0 0 25px rgba(#FFF, .3);
+      background: $green;
+      // color: $paper-light;
+      // box-shadow: 0 0 25px rgba(#FFF, .3);
 
       button {
         display: block;
@@ -152,7 +164,7 @@ footer {
 
     h1 {
       font-size: 50px;
-      font-family: 'Shadows Into Light', cursive;
+      font-family: 'Shadows Into Light', sans-serif;
     }
 
     .well {
@@ -164,6 +176,7 @@ footer {
 
 .about-view {
     height: 86vh;
+    background: $paper;
     display: flex;
     justify-content: center;
     align-items: center;

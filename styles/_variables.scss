@@ -4,6 +4,7 @@ $salmon: #FF135A;
 $pink: #e91e63;
 $teal: #107B69;
 $gray: #333333;
+$gray: #2b2b24;
 $tangerine: #ffc528;
 $forest: #87CC29;
 $green: #9ada28;
@@ -15,10 +16,14 @@ $red-pink2: #c3264e;
 $maroon: #861b3c;
 $paper: #EFEBDE;
 $paper: #f6f6ec;
+$paper-light: lighten($paper, 5%);
 
 
 //////////////// THEME \\\\\\\\\\\\\\\\\\
 
 $primary-color: $red-pink2;
 $primary-color-light: lighten($primary-color, 10%);
-$accent-color: $pink;
+$accent-color: #ff0057;
+$header-footer-color: $gray;
+$split-left-color: #575757;
+$split-left-color: #565652;

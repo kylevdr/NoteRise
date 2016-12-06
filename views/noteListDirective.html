@@ -1,5 +1,5 @@
 <div class="note-list-heading">
-    Notes
+    <span style="font-size: 1.3em">NOTES</span>
 </div>
 <div class="note-list sortable">
     <div class="note-listing" ng-repeat="note in notes | filter : {archived : '!'+true} track by $index" ng-click="setNote(note)">
@@ -10,5 +10,5 @@
     </div>
 </div>
 <div class="center">
-    <button class="btn btn-default" ng-click="createNote()">New Note</button>
+    <button class="btn btn-primary" style="box-shadow: 0 0 10px rgba(0,0,0,.17)" ng-click="createNote()">New Note</button>
 </div>
