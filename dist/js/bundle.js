@@ -32,7 +32,7 @@ angular.module('noteRiseApp').controller('mainCtrl', function ($scope, mainServi
         });
     };
 
-    // $scope.getQuote();
+    $scope.getQuote();
 
     $scope.saveNotes = function () {
         mainService.setNotes($scope.notes);

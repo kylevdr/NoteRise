@@ -13,7 +13,7 @@ angular.module('noteRiseApp').controller('mainCtrl', function($scope, mainServic
       });
     };
 
-    // $scope.getQuote();
+    $scope.getQuote();
 
     $scope.saveNotes = function() {
         mainService.setNotes($scope.notes);
