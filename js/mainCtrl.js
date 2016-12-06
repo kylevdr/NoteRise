@@ -4,22 +4,16 @@ angular.module('noteRiseApp').controller('mainCtrl', function($scope, mainServic
       $scope.notes = mainService.getNotes();
     }();
 
-    // $scope.getQuote = function() {
-    //   $scope.quote = mainService.getQuote();
-    //   $scope.quoteString = `"${$scope.quote.text}" -- ${$scope.quote.author}`;
-    // }();
-
     $scope.getQuote = function() {
       mainService.getQuote().then(function(result) {
         $scope.quote = result;
         $scope.quote.text = result.quote;
         $scope.quote.author = result.author;
         $scope.quoteString = `"${$scope.quote.text}" -- ${$scope.quote.author}`;
-        console.dir($scope.quote);
       });
     };
 
-    $scope.getQuote();
+    // $scope.getQuote();
 
     $scope.saveNotes = function() {
         mainService.setNotes($scope.notes);

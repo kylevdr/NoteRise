@@ -3,7 +3,7 @@ angular.module('noteRiseApp').service('mainService', function($http) {
     var sampleNotes = [
         {
             title: 'Sample note',
-            text: 'You don\'t have any notes yet. Here is a sample note to get you started.',
+            text: 'You haven\'t created any notes yet. This is a sample note to get you started. You can edit this note, or delete it and create your own.',
             time: new Date(),
             id: 0
         }
@@ -21,10 +21,6 @@ angular.module('noteRiseApp').service('mainService', function($http) {
     this.setNotes = function(noteList) {
         localStorage.setItem('notes', JSON.stringify(noteList));
     };
-
-    // this.getQuote = function() {
-    //   return sampleQuote;
-    // };
 
     this.getQuote = function() {
 
@@ -61,7 +57,6 @@ angular.module('noteRiseApp').service('mainService', function($http) {
       // });
 
       //theysaidso
-      //TODO: include attribution on about posts_per_page
       //Limit 10 API calls/hour
       //Requires paid subscription for more API calls or for random quote
 
